@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="VITALIS AI — an experimental language model and research chat interface.">
+  <title>VITALIS AI — Research Chat</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="/" aria-label="VITALIS AI home">
+        <span class="brand-mark">V<span class="brand-spark">✦</span></span>
+        <span class="brand-copy"><strong>VITALIS</strong><small>AI LABS</small></span>
+      </a>
+      <button class="new-chat" id="newChat"><span class="plus">＋</span> New chat <span class="shortcut">⌘ K</span></button>
+      <div class="side-label">WORKSPACE</div>
+      <button class="nav-item active" type="button"><span class="nav-icon">◈</span> AI Chat <span class="nav-dot"></span></button>
+      <div class="side-label recent-label">RECENT CHATS</div>
+      <div class="history-list" id="historyList"><div class="empty-history">Your conversations will appear here.</div></div>
+      <div class="sidebar-bottom">
+        <div class="model-card"><span class="model-orb"></span><div><strong>VITALIS Core</strong><small id="sideModelStatus">Checking model…</small></div><span class="dots">···</span></div>
+        <div class="profile-row"><div class="avatar">V</div><div><strong>Local research mode</strong><small>Experimental build</small></div><span class="settings-icon">⚙</span></div>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><span class="crumb-sep">/</span><strong>AI Chat</strong></div>
+        <div class="topbar-right"><span class="privacy-pill"><span></span> <span id="connectionLabel">Connecting</span></span><button class="icon-button" id="clearChat" title="Clear conversation" aria-label="Clear conversation">↺</button></div>
+      </header>
+
+      <section class="chat-scroll" id="chatScroll">
+        <div class="welcome" id="welcome">
+          <div class="welcome-icon"><span>V</span><i>✦</i></div>
+          <div class="eyebrow"><span class="eyebrow-line"></span> YOUR RESEARCH COMPANION</div>
+          <h1>Ideas start with<br><span>a better question.</span></h1>
+          <p class="welcome-sub">Explore ideas, organize your thinking, and experiment with VITALIS — an early-stage language model built from scratch.</p>
+          <div class="suggestion-grid">
+            <button class="suggestion" data-prompt="Explain how a Transformer language model predicts the next token."><span class="suggestion-icon blue">⌘</span><span><strong>Understand AI</strong><small>How does a Transformer learn?</small></span><span class="suggestion-arrow">↗</span></button>
+            <button class="suggestion" data-prompt="Help me outline a small, testable biology research question."><span class="suggestion-icon mint">⌬</span><span><strong>Explore biology</strong><small>Shape a research question</small></span><span class="suggestion-arrow">↗</span></button>
+            <button class="suggestion" data-prompt="Give me a clear checklist for evaluating a scientific claim."><span class="suggestion-icon violet">☷</span><span><strong>Evaluate evidence</strong><small>Build a science checklist</small></span><span class="suggestion-arrow">↗</span></button>
+            <button class="suggestion" data-prompt="Help me write a Python function that counts words in a text file."><span class="suggestion-icon amber">{ }</span><span><strong>Build something</strong><small>Start a Python experiment</small></span><span class="suggestion-arrow">↗</span></button>
+          </div>
+          <div class="welcome-note"><span class="note-icon">✳</span><span><strong>Early-stage model</strong><br>Responses depend on the model you trained and may be incorrect.</span></div>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </section>
+
+      <footer class="composer-wrap">
+        <div class="model-notice" id="modelNotice"><span class="notice-dot"></span><span id="noticeText">Checking whether a trained model is available…</span></div>
+        <form class="composer" id="chatForm">
+          <textarea id="promptInput" rows="1" maxlength="4000" placeholder="Ask VITALIS anything…" aria-label="Message VITALIS" required></textarea>
+          <div class="composer-tools"><span class="input-hint">↵ Send <span>·</span> Shift + ↵ for new line</span><button id="sendButton" class="send-button" type="submit" aria-label="Send message"><span>Send</span><span class="send-arrow">↑</span></button></div>
+        </form>
+        <p class="disclaimer">VITALIS is experimental and not medically validated. Do not use it for diagnosis or treatment decisions.</p>
+      </footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

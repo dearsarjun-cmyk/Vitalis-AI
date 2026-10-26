@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+# Do not commit private or copyrighted training material.
+data/corpus/
+data/bootstrap.txt
+# Model files may be large; include them in deployment only if you intend to publish them.
+vitalis_model.pt
+vitalis_latest.pt
+optimizer.pt

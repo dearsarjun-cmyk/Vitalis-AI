@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "VITALIS Website",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/web_app.py",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "VITALIS Train (2000 steps)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/hello.py",
+      "args": ["train", "--steps", "2000"],
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "VITALIS Chat (terminal)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/hello.py",
+      "args": ["chat"],
+      "console": "integratedTerminal",
+      "justMyCode": false
+    }
+  ]
+}

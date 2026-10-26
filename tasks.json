@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "VITALIS: Install dependencies with uv",
+      "type": "shell",
+      "command": "uv sync",
+      "problemMatcher": []
+    },
+    {
+      "label": "VITALIS: Train 2000 steps",
+      "type": "shell",
+      "command": "uv run python hello.py train --steps 2000",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "VITALIS: Resume training 2000 steps",
+      "type": "shell",
+      "command": "uv run python hello.py train --resume --steps 2000",
+      "problemMatcher": []
+    },
+    {
+      "label": "VITALIS: Start website",
+      "type": "shell",
+      "command": "uv run python web_app.py",
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}
